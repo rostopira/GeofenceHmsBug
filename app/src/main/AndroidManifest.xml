@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.rostopira.geofencehmsbug">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:label="Geofence Bug"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".GeofenceEventsReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="dev.rostopira.geofencehmsbug.GeofenceEventsReceiver"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
